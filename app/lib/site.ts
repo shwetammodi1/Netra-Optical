@@ -16,7 +16,9 @@ export const site = {
     'Computerised eye testing, designer frames, premium lenses and contact lens fitting in South Tukoganj, Indore.',
   description:
     'Netra Optical is an optical showroom in South Tukoganj, Indore, offering computerised eye testing, prescription eyewear, designer frames, premium lenses, sunglasses and contact lens fitting — with expert in-store fitting, adjustments and repairs.',
-  url: 'https://netraoptical.pages.dev', // TODO: swap for the real domain once purchased
+  // Matches the Cloudflare Pages project name (`netra-optical`).
+  // TODO: swap for the real domain once purchased, and update public/robots.txt to match.
+  url: 'https://netra-optical.pages.dev',
   locale: 'en_IN',
 
   contact: {

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://netraoptical.pages.dev/sitemap.xml
+Sitemap: https://netra-optical.pages.dev/sitemap.xml

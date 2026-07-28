@@ -33,7 +33,7 @@ Everything below lives in **`app/lib/site.ts`** unless stated otherwise.
 2. **Replace the testimonials.** `testimonials` currently holds six clearly
    labelled `Placeholder — Customer A…F` entries. Swap in real, consented quotes
    or live Google reviews. Do not publish the placeholders.
-3. **Set the real domain.** `site.url` is `https://netraoptical.pages.dev`. Change
+3. **Set the real domain.** `site.url` is `https://netra-optical.pages.dev`. Change
    it, then update the `Sitemap:` line in `public/robots.txt` to match — canonical
    URLs, Open Graph tags and JSON-LD all derive from `site.url`.
 4. **Confirm the email address.** `site.contact.email` is a guess; correct it or
