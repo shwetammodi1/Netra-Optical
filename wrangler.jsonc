@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "netra-optical",
+  "pages_build_output_dir": "dist",
+
+  // hono/jsx uses AsyncLocalStorage (node:async_hooks) for its render context.
+  // Without nodejs_compat the Worker fails to boot with:
+  //   Uncaught Error: No such module "node:async_hooks"
+  // Cloudflare Pages reads this file on deploy, so no dashboard config is needed.
+  "compatibility_date": "2025-04-01",
+  "compatibility_flags": ["nodejs_compat"]
+}

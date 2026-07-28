@@ -1,0 +1,326 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Netra Optical — design tokens
+   Palette: deep ink + champagne gold + warm ivory, with a cool
+   "lens" tint reserved for glass / optical highlights only.
+------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+
+  --color-ink-950: #05070a;
+  --color-ink-900: #090d13;
+  --color-ink-800: #10161f;
+  --color-ink-700: #182029;
+  --color-ink-600: #232d39;
+  --color-ink-500: #3a4653;
+  --color-ink-400: #5c6875;
+  --color-ink-300: #8b96a2;
+
+  --color-ivory-50: #fdfcfa;
+  --color-ivory-100: #f8f5f0;
+  --color-ivory-200: #efe9e0;
+  --color-ivory-300: #e2d9cb;
+
+  --color-gold-100: #f5e9cf;
+  --color-gold-200: #e7d1a1;
+  --color-gold-300: #d8b877;
+  --color-gold-400: #c9a55c;
+  --color-gold-500: #b28c42;
+  --color-gold-600: #8d6d31;
+
+  --color-lens-300: #a9cfdd;
+  --color-lens-400: #7fb3c8;
+  --color-lens-500: #558fa8;
+
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.75rem;
+
+  --shadow-lift: 0 1px 2px rgb(5 7 10 / 0.04), 0 12px 28px -12px rgb(5 7 10 / 0.14);
+  --shadow-lift-lg: 0 2px 4px rgb(5 7 10 / 0.05), 0 32px 64px -24px rgb(5 7 10 / 0.28);
+  --shadow-glow: 0 0 0 1px rgb(201 165 92 / 0.18), 0 24px 60px -20px rgb(201 165 92 / 0.35);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-float-slow: float-slow 11s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.6s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(400%);
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base
+------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-ivory-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv02', 'cv03', 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-300);
+    color: var(--color-ink-950);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Slim, on-brand scrollbar */
+  @supports (scrollbar-width: thin) {
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-gold-400) var(--color-ivory-200);
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Scroll reveal — driven by one IntersectionObserver in client.ts.
+   Degrades to fully visible without JS (see <noscript> in renderer).
+------------------------------------------------------------------ */
+@layer components {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal='left'] {
+    transform: translate3d(-28px, 0, 0);
+  }
+
+  [data-reveal='right'] {
+    transform: translate3d(28px, 0, 0);
+  }
+
+  [data-reveal='zoom'] {
+    transform: scale(0.94);
+  }
+
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Underline that draws in on hover */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.45s var(--ease-out-expo);
+  }
+
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Glass surfaces */
+  .glass-dark {
+    background-color: rgb(9 13 19 / 0.62);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgb(255 255 255 / 0.08);
+  }
+
+  .glass-light {
+    background-color: rgb(253 252 250 / 0.72);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgb(5 7 10 / 0.06);
+  }
+
+  /* Gold foil text */
+  .text-foil {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-gold-500) 0%,
+      var(--color-gold-200) 28%,
+      var(--color-gold-100) 42%,
+      var(--color-gold-300) 58%,
+      var(--color-gold-500) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hairline gold rule */
+  .rule-gold {
+    height: 1px;
+    background-image: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold-400) 22%,
+      var(--color-gold-200) 50%,
+      var(--color-gold-400) 78%,
+      transparent
+    );
+  }
+
+  /* Ambient mesh used behind dark sections */
+  .mesh-ink {
+    background-color: var(--color-ink-950);
+    background-image:
+      radial-gradient(58rem 34rem at 12% -8%, rgb(201 165 92 / 0.2), transparent 62%),
+      radial-gradient(46rem 30rem at 92% 8%, rgb(127 179 200 / 0.16), transparent 60%),
+      radial-gradient(60rem 40rem at 50% 118%, rgb(201 165 92 / 0.12), transparent 62%);
+  }
+
+  .mesh-ivory {
+    background-color: var(--color-ivory-50);
+    background-image:
+      radial-gradient(48rem 30rem at 88% -10%, rgb(201 165 92 / 0.14), transparent 60%),
+      radial-gradient(42rem 28rem at 4% 12%, rgb(127 179 200 / 0.1), transparent 58%);
+  }
+
+  /* Fine grain overlay — kills gradient banding, adds print-like texture */
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  }
+
+  /* CSS-only safety net: the curtain lifts at 3s even if client.ts never runs */
+  #preloader {
+    animation: preloader-out 0.7s var(--ease-out-expo) 3s forwards;
+  }
+
+  @keyframes preloader-out {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  /* Scroll rails: hide the bar in every engine, keep the scrolling */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-lift {
+    transition:
+      transform 0.55s var(--ease-out-expo),
+      box-shadow 0.55s var(--ease-out-expo),
+      border-color 0.55s var(--ease-out-expo);
+  }
+
+  .card-lift:hover {
+    transform: translate3d(0, -6px, 0);
+  }
+
+  /* Marquee track: duplicate children, translate -50% */
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .marquee-track {
+    animation: var(--animate-marquee);
+  }
+
+  .marquee-mask:hover .marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Motion preferences — respected globally
+------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Netra Optical — Opticians & Luxury Eyewear, Indore",
+  "short_name": "Netra Optical",
+  "description": "Computerised eye testing, designer frames, premium lenses and contact lens fitting in South Tukoganj, Indore.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05070a",
+  "theme_color": "#05070a",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
