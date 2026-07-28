@@ -17,7 +17,7 @@ export const Testimonials = () => (
         title={
           <>
             What people say
-            <span class="italic text-foil"> after they walk out</span>
+            <span class="text-foil"> after they walk out</span>
           </>
         }
       />

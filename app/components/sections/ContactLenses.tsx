@@ -19,7 +19,7 @@ export const ContactLenses = () => (
         title={
           <>
             Fitted properly.
-            <span class="italic text-gold-600"> Worn safely.</span>
+            <span class="text-gold-600"> Worn safely.</span>
           </>
         }
         description="A contact lens is a medical device sitting on your cornea — the curve has to match. We measure before we sell, and we make sure you can insert, remove and clean them confidently before you leave."

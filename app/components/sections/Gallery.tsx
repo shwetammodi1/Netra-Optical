@@ -17,7 +17,7 @@ export const Gallery = () => (
         title={
           <>
             Inside the store on
-            <span class="italic text-gold-600"> Trade Centre Road</span>
+            <span class="text-gold-600"> Trade Centre Road</span>
           </>
         }
         description="The frame wall, the testing room and the fitting bench — have a look before you visit."

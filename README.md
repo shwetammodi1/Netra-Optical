@@ -135,7 +135,9 @@ app/
 Tokens live in the `@theme` block of `app/style.css` — change a colour there and
 it propagates everywhere. The palette is deep ink + champagne gold + warm ivory,
 with a cool "lens" tint reserved for glass and optical highlights. Type is
-Instrument Serif for display and Inter for text.
+Inter throughout — headings get their weight from the `.font-display` rule
+(600 weight, -0.035em tracking) rather than from a contrasting serif, so the
+page reads as one voice. Accent phrases are coloured, never italicised.
 
 Reusable utilities: `.glass-dark` / `.glass-light`, `.text-foil`, `.rule-gold`,
 `.mesh-ink` / `.mesh-ivory`, `.grain`, `.card-lift`, `.link-underline`,

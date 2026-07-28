@@ -33,7 +33,7 @@ export const Contact = () => (
         title={
           <>
             Come and see us in
-            <span class="italic text-gold-600"> South Tukoganj</span>
+            <span class="text-gold-600"> South Tukoganj</span>
           </>
         }
         description={`${site.address.landmark} — on the Trade Centre stretch, with parking along the strip.`}

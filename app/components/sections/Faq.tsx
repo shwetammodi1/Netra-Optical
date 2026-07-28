@@ -16,7 +16,7 @@ export const Faq = () => (
             title={
               <>
                 Questions,
-                <span class="italic text-gold-600"> answered plainly</span>
+                <span class="text-gold-600"> answered plainly</span>
               </>
             }
             description="The things people ask most often before their first visit."

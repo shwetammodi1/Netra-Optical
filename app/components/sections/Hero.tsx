@@ -40,7 +40,7 @@ export const Hero = () => (
             <h1 class="mt-7 font-display text-[3.1rem] leading-[0.95] tracking-[-0.03em] text-ivory-50 sm:text-7xl lg:text-[5.4rem]">
               See the world
               <br />
-              <span class="text-foil animate-shimmer italic">beautifully.</span>
+              <span class="text-foil animate-shimmer">beautifully.</span>
             </h1>
           </Reveal>
 

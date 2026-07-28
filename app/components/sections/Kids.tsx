@@ -22,7 +22,7 @@ export const Kids = () => (
             title={
               <>
                 Small faces need
-                <span class="italic text-gold-600"> different engineering</span>
+                <span class="text-gold-600"> different engineering</span>
               </>
             }
             description="Children do not treat glasses gently, and they should not have to. We fit flexible frames with impact-resistant lenses, sized to the bridge rather than scaled down from an adult shape."

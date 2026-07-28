@@ -24,7 +24,7 @@ export const Footer = () => (
           />
           <h2 class="mx-auto max-w-3xl font-display text-[2.4rem] leading-[1.05] tracking-tight text-ivory-50 sm:text-6xl">
             Your next pair starts with
-            <span class="text-foil italic"> a proper eye test</span>
+            <span class="text-foil"> a proper eye test</span>
           </h2>
           <p class="mx-auto mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-ivory-200/60">
             Walk in during store hours, or message us and we will keep a slot ready.

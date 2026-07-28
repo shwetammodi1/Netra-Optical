@@ -12,7 +12,7 @@ export const WhyUs = () => (
         title={
           <>
             Six reasons people come back,
-            <span class="italic text-gold-600"> and send their family</span>
+            <span class="text-gold-600"> and send their family</span>
           </>
         }
       />

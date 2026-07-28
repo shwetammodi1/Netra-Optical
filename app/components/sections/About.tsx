@@ -75,7 +75,7 @@ export const About = () => (
             title={
               <>
                 An optical showroom that
-                <span class="italic text-gold-600"> starts with your eyes</span>
+                <span class="text-gold-600"> starts with your eyes</span>
               </>
             }
             description="We are a neighbourhood optical store in the middle of Indore, built on a simple order of operations: test properly, explain honestly, then fit beautifully."

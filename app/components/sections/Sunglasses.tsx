@@ -26,7 +26,7 @@ export const Sunglasses = () => (
             title={
               <>
                 UV protection that
-                <span class="italic text-foil"> happens to look incredible</span>
+                <span class="text-foil"> happens to look incredible</span>
               </>
             }
             description="Indore sun is not gentle. Every pair on our sunglass bar is UV400 rated, with polarised options for driving and prescription lenses cut to your exact power."

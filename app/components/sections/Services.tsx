@@ -18,7 +18,7 @@ export const Services = () => (
         title={
           <>
             Everything your eyes need,
-            <span class="italic text-foil"> under one roof</span>
+            <span class="text-foil"> under one roof</span>
           </>
         }
         description="From the first vision check to the last adjustment years later — handled in store, by people you can walk back to."

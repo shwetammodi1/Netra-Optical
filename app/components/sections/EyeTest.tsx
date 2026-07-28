@@ -14,7 +14,7 @@ export const EyeTest = () => (
         title={
           <>
             Fifteen minutes that change
-            <span class="italic text-foil"> how you see everything</span>
+            <span class="text-foil"> how you see everything</span>
           </>
         }
         description="A calibrated auto-refractor gives us an objective starting point. An optometrist then refines it lens by lens, so the number on your prescription is the one your eyes actually agree with."

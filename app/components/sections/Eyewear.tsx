@@ -16,7 +16,7 @@ export const Eyewear = () => (
           title={
             <>
               Frames worth
-              <span class="italic text-gold-600"> looking twice at</span>
+              <span class="text-gold-600"> looking twice at</span>
             </>
           }
           description="Six house edits covering how people actually live — featherweight titanium for all-day wear, Italian acetate for character, and deep-B shapes built for progressives."
